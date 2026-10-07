@@ -3,6 +3,8 @@
 namespace Concrete\Package\GroupMemberManager;
 
 use Concrete\Core\Asset\Asset;
+use Concrete\Core\Attribute\Key\UserKey;
+use Concrete\Core\Block\BlockType\BlockType;
 use Concrete\Core\Asset\AssetList;
 use Concrete\Core\Http\Request;
 use Concrete\Core\Package\Package;
@@ -22,7 +24,7 @@ class Controller extends Package
 {
     protected $pkgHandle = 'group_member_manager';
     protected $appVersionRequired = '9.0.0';
-    protected $pkgVersion = '1.1.0';
+    protected $pkgVersion = '1.2.0';
     protected $pkgAutoloaderRegistries = [
         'src' => 'GroupMemberManager',
     ];
@@ -99,6 +101,25 @@ class Controller extends Package
 
     protected function installContent(): void
     {
+        $pkg = $this->getPackageEntity();
+        if (!BlockType::getByHandle('group_members')) {
+            BlockType::installBlockType('group_members', $pkg);
+        }
+        if (!UserKey::getByHandle(\GroupMemberManager\Directory\MemberDirectory::ROLE_ATTRIBUTE)) {
+            // set by administrators only, shown by the Member List block
+            UserKey::add('text', [
+                'akHandle' => \GroupMemberManager\Directory\MemberDirectory::ROLE_ATTRIBUTE,
+                'akName' => t('Role in the club'),
+                'akIsSearchable' => false,
+                'uakProfileDisplay' => false,
+                'uakProfileEdit' => false,
+                'uakProfileEditRequired' => false,
+                'uakRegisterEdit' => false,
+                'uakRegisterEditRequired' => false,
+                'uakMemberListDisplay' => false,
+            ], $pkg);
+        }
+
         $page = Page::getByPath('/dashboard/users/group_allocation');
         if (!$page || $page->isError()) {
             $page = SinglePage::add('/dashboard/users/group_allocation', $this->getPackageEntity());
