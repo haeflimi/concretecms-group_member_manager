@@ -1,0 +1,5 @@
+.gmm-panel { margin-top: 2rem; }
+.gmm-panel .gmm-search { max-width: 22rem; }
+.gmm-panel .gmm-candidates { position: relative; max-width: 28rem; }
+.gmm-panel .gmm-candidates .list-group { position: absolute; z-index: 20; left: 0; right: 0; max-height: 18rem; overflow-y: auto; }
+.gmm-panel .gmm-email { color: var(--bs-secondary-color, #6c757d); }
