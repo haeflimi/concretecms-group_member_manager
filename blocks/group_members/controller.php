@@ -16,6 +16,8 @@ class Controller extends BlockController
 {
     public const MODE_CARDS = 'cards';
     public const MODE_DIRECTORY = 'directory';
+    /** avatars, member count and how many are new: a teaser, e.g. next to "become a member" */
+    public const MODE_SUMMARY = 'summary';
 
     protected $btTable = 'btGmmGroupMembers';
     protected $btInterfaceWidth = 500;
@@ -67,7 +69,7 @@ class Controller extends BlockController
     {
         parent::save([
             'groupID' => (int) ($args['groupID'] ?? 0),
-            'mode' => ($args['mode'] ?? '') === self::MODE_DIRECTORY ? self::MODE_DIRECTORY : self::MODE_CARDS,
+            'mode' => in_array($args['mode'] ?? '', [self::MODE_DIRECTORY, self::MODE_SUMMARY], true) ? $args['mode'] : self::MODE_CARDS,
             'filterGroupIDs' => implode(',', array_filter(array_map('intval', (array) ($args['filterGroupIDs'] ?? [])))),
             'newDays' => max(0, min(3650, (int) ($args['newDays'] ?? 60))),
             'showStats' => !empty($args['showStats']) ? 1 : 0,
@@ -91,7 +93,8 @@ class Controller extends BlockController
         $this->set('people', $result['people']);
         $this->set('filters', $result['filters']);
         $this->set('total', $result['total']);
-        $this->set('modeName', $this->mode === self::MODE_DIRECTORY ? self::MODE_DIRECTORY : self::MODE_CARDS);
+        $this->set('modeName', in_array($this->mode, [self::MODE_DIRECTORY, self::MODE_SUMMARY], true) ? $this->mode : self::MODE_CARDS);
+        $this->set('newCount', count(array_filter($result['people'], static function ($p) { return in_array('new', $p['tags'], true); })));
     }
 
     protected function setFormData(): void

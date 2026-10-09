@@ -26,6 +26,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
     <select class="form-select" name="mode" id="mode">
         <option value="cards"<?= $mode !== 'directory' ? ' selected' : '' ?>><?= t('Cards with facts (board, team)') ?></option>
         <option value="directory"<?= $mode === 'directory' ? ' selected' : '' ?>><?= t('Directory with search and filters') ?></option>
+        <option value="summary"<?= $mode === 'summary' ? ' selected' : '' ?>><?= t('Summary: faces, count and newcomers') ?></option>
     </select>
 </div>
 <div class="form-group">
