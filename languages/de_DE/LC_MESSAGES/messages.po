@@ -1,0 +1,280 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the group_member_manager package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: group_member_manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-09 22:02+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: group_member_manager/controller.php:34
+msgid "Group Member Manager"
+msgstr "Gruppenmitglieder-Verwaltung"
+
+#: group_member_manager/controller.php:39
+msgid "Add and remove the members of a group directly on the dashboard group edit page."
+msgstr "Mitglieder einer Gruppe direkt auf der Bearbeitungsseite der Gruppe im Dashboard hinzufügen und entfernen."
+
+#: group_member_manager/controller.php:65
+msgid "Members"
+msgstr "Mitglieder"
+
+#: group_member_manager/controller.php:66
+msgid "Add a member"
+msgstr "Mitglied hinzufügen"
+
+#: group_member_manager/controller.php:67
+msgid "Search users by name or email"
+msgstr "Benutzer nach Name oder E-Mail suchen"
+
+#: group_member_manager/controller.php:68
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:24
+msgid "Filter members"
+msgstr "Mitglieder filtern"
+
+#: group_member_manager/controller.php:69
+msgid "Name"
+msgstr "Name"
+
+#: group_member_manager/controller.php:70
+msgid "Email"
+msgstr "E-Mail"
+
+#: group_member_manager/controller.php:71
+msgid "Added"
+msgstr "Hinzugefügt"
+
+#: group_member_manager/controller.php:72
+msgid "Remove"
+msgstr "Entfernen"
+
+#: group_member_manager/controller.php:73
+#, php-format
+msgid "Remove %s from this group?"
+msgstr "%s aus dieser Gruppe entfernen?"
+
+#: group_member_manager/controller.php:74
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:54
+msgid "No members."
+msgstr "Keine Mitglieder."
+
+#: group_member_manager/controller.php:75
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:60
+msgid "members"
+msgstr "Mitglieder"
+
+#: group_member_manager/controller.php:76
+msgid "No matching users outside this group."
+msgstr "Keine passenden Benutzer außerhalb dieser Gruppe."
+
+#: group_member_manager/controller.php:112
+msgid "Role in the club"
+msgstr "Rolle im Verein"
+
+#: group_member_manager/controller.php:126
+msgid "Group Allocation"
+msgstr "Gruppenzuteilung"
+
+#: group_member_manager/controller.php:126
+msgid "Allocate users to groups and move them between groups."
+msgstr "Benutzer Gruppen zuteilen und zwischen Gruppen verschieben."
+
+#: group_member_manager/src/Controller/Members.php:107
+msgid "Invalid user."
+msgstr "Ungültiger Benutzer."
+
+#: group_member_manager/src/Controller/Members.php:130
+#: group_member_manager/src/Controller/Allocation.php:120
+msgid "Invalid group."
+msgstr "Ungültige Gruppe."
+
+#: group_member_manager/src/Controller/Members.php:133
+#: group_member_manager/src/Controller/Allocation.php:106
+msgid "Access Denied."
+msgstr "Zugriff verweigert."
+
+#: group_member_manager/src/Controller/Members.php:136
+msgid "You are not allowed to assign users to this group."
+msgstr "Du darfst dieser Gruppe keine Benutzer zuweisen."
+
+#: group_member_manager/src/Controller/Allocation.php:76
+msgid "Invalid request."
+msgstr "Ungültige Anfrage."
+
+#: group_member_manager/src/Controller/Allocation.php:79
+msgid "Too many users at once."
+msgstr "Zu viele Benutzer auf einmal."
+
+#: group_member_manager/src/Controller/Allocation.php:84
+msgid "Source and target group are the same."
+msgstr "Quell- und Zielgruppe sind identisch."
+
+#: group_member_manager/src/Controller/Allocation.php:90
+#, php-format
+msgid "%d user moved from %s to %s."
+msgid_plural "%d users moved from %s to %s."
+msgstr[0]  "%d Benutzer von %s nach %s verschoben."
+msgstr[1]  "%d Benutzer von %s nach %s verschoben."
+
+#: group_member_manager/src/Controller/Allocation.php:92
+#, php-format
+msgid "%d user added to %s."
+msgid_plural "%d users added to %s."
+msgstr[0]  "%d Benutzer zu %s hinzugefügt."
+msgstr[1]  "%d Benutzer zu %s hinzugefügt."
+
+#: group_member_manager/src/Controller/Allocation.php:94
+#, php-format
+msgid "%d user removed from %s."
+msgid_plural "%d users removed from %s."
+msgstr[0]  "%d Benutzer aus %s entfernt."
+msgstr[1]  "%d Benutzer aus %s entfernt."
+
+#: group_member_manager/src/Controller/Allocation.php:123
+#, php-format
+msgid "You are not allowed to assign users to the group %s."
+msgstr "Du darfst der Gruppe %s keine Benutzer zuweisen."
+
+#: group_member_manager/blocks/group_members/controller.php:44
+msgid "Member List"
+msgstr "Mitgliederliste"
+
+#: group_member_manager/blocks/group_members/controller.php:49
+msgid "The people of a group as cards or as searchable directory."
+msgstr "Die Personen einer Gruppe als Karten oder als durchsuchbares Verzeichnis."
+
+#: group_member_manager/blocks/group_members/controller.php:102
+msgid "— Choose a group —"
+msgstr "— Gruppe wählen —"
+
+#: group_member_manager/blocks/group_members/form.php:16
+msgid "Group"
+msgstr "Gruppe"
+
+#: group_member_manager/blocks/group_members/form.php:22
+msgid "Direct members of the group."
+msgstr "Direkte Mitglieder der Gruppe."
+
+#: group_member_manager/blocks/group_members/form.php:25
+msgid "Display"
+msgstr "Darstellung"
+
+#: group_member_manager/blocks/group_members/form.php:27
+msgid "Cards with facts (board, team)"
+msgstr "Karten mit Fakten (Vorstand, Team)"
+
+#: group_member_manager/blocks/group_members/form.php:28
+msgid "Directory with search and filters"
+msgstr "Verzeichnis mit Suche und Filtern"
+
+#: group_member_manager/blocks/group_members/form.php:29
+msgid "Summary: faces, count and newcomers"
+msgstr "Übersicht: Gesichter, Anzahl und Neuzugänge"
+
+#: group_member_manager/blocks/group_members/form.php:33
+msgid "Maximum number of people (0 = all)"
+msgstr "Maximale Anzahl Personen (0 = alle)"
+
+#: group_member_manager/blocks/group_members/form.php:38
+msgid "Show events attended and member since"
+msgstr "Besuchte Events und „Mitglied seit“ anzeigen"
+
+#: group_member_manager/blocks/group_members/form.php:41
+msgid "\"New\" filter: joined in the last … days (0 = no filter)"
+msgstr "Filter „Neu“: beigetreten in den letzten … Tagen (0 = kein Filter)"
+
+#: group_member_manager/blocks/group_members/form.php:44
+msgid "More filters: members that are also in these groups (directory)"
+msgstr "Weitere Filter: Mitglieder, die auch in diesen Gruppen sind (Verzeichnis)"
+
+#: group_member_manager/blocks/group_members/view.php:13
+msgid "Nobody here yet."
+msgstr "Noch niemand hier."
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:15
+msgid "Groups on the board"
+msgstr "Angezeigte Gruppen"
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:21
+msgid "Ctrl/Cmd-click to pick several, up to 12."
+msgstr "Strg/Cmd-Klick, um mehrere zu wählen, bis zu 12."
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:25
+msgid "Name or email"
+msgstr "Name oder E-Mail"
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:30
+msgid "Find users"
+msgstr "Benutzer finden"
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:32
+msgid "Search by name or email, then drag a user onto a group"
+msgstr "Suche nach Name oder E-Mail und ziehe dann einen Benutzer auf eine Gruppe"
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:32
+msgid "Search users"
+msgstr "Benutzer suchen"
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:39
+msgid "Drag members onto another group to move them, hold Ctrl/Alt to add them without leaving the old group. Tick several members to move them together."
+msgstr "Ziehe Mitglieder auf eine andere Gruppe, um sie zu verschieben, halte Strg/Alt gedrückt, um sie hinzuzufügen, ohne die alte Gruppe zu verlassen. Markiere mehrere Mitglieder, um sie gemeinsam zu verschieben."
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:44
+msgid "Pick one or more groups to start."
+msgstr "Wähle eine oder mehrere Gruppen, um zu beginnen."
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:49
+msgid "Remove from group"
+msgstr "Aus Gruppe entfernen"
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:50
+#, php-format
+msgid "Remove %s from %s?"
+msgstr "%s aus %s entfernen?"
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:51
+msgid "Move selected to…"
+msgstr "Ausgewählte verschieben nach…"
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:52
+msgid "Add selected to…"
+msgstr "Ausgewählte hinzufügen zu…"
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:53
+msgid "selected"
+msgstr "ausgewählt"
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:55
+msgid "You may not change the members of this group."
+msgstr "Du darfst die Mitglieder dieser Gruppe nicht ändern."
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:56
+#, php-format
+msgid "Already in: %s"
+msgstr "Bereits in: %s"
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:57
+msgid "No users found."
+msgstr "Keine Benutzer gefunden."
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:58
+msgid "Request failed."
+msgstr "Anfrage fehlgeschlagen."
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:59
+msgid "Close"
+msgstr "Schließen"
+
+#: group_member_manager/single_pages/dashboard/users/group_allocation.php:61
+msgid "Select all shown"
+msgstr "Alle angezeigten auswählen"
