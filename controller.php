@@ -24,7 +24,7 @@ class Controller extends Package
 {
     protected $pkgHandle = 'group_member_manager';
     protected $appVersionRequired = '9.0.0';
-    protected $pkgVersion = '1.2.0';
+    protected $pkgVersion = '1.3.0';
     protected $pkgAutoloaderRegistries = [
         'src' => 'GroupMemberManager',
     ];
@@ -102,8 +102,10 @@ class Controller extends Package
     protected function installContent(): void
     {
         $pkg = $this->getPackageEntity();
-        if (!BlockType::getByHandle('group_members')) {
-            BlockType::installBlockType('group_members', $pkg);
+        foreach (['group_members', 'membership_application'] as $handle) {
+            if (!BlockType::getByHandle($handle)) {
+                BlockType::installBlockType($handle, $pkg);
+            }
         }
         if (!UserKey::getByHandle(\GroupMemberManager\Directory\MemberDirectory::ROLE_ATTRIBUTE)) {
             // set by administrators only, shown by the Member List block

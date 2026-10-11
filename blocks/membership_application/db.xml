@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+    <table name="btGmmMembershipApplication">
+        <field name="bID" type="I"><key/><unsigned/></field>
+        <field name="entityHandle" type="C" size="64"><default value="join"/></field>
+        <field name="recipients" type="C" size="255"></field>
+        <field name="memberGroupIDs" type="C" size="255"></field>
+        <field name="submitLabel" type="C" size="128"></field>
+    </table>
+</schema>

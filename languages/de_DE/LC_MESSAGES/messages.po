@@ -278,3 +278,91 @@ msgstr "Schließen"
 #: group_member_manager/single_pages/dashboard/users/group_allocation.php:61
 msgid "Select all shown"
 msgstr "Alle angezeigten auswählen"
+
+msgid "Anything else?"
+msgstr "Sonst noch etwas?"
+
+msgid "Create an account"
+msgstr "Konto erstellen"
+
+msgid "Discord"
+msgstr "Discord"
+
+msgid "E-mail"
+msgstr "E-Mail"
+
+msgid "How do you know us?"
+msgstr "Woher kennst du uns?"
+
+msgid "Nickname"
+msgstr "Nickname"
+
+msgid "Place"
+msgstr "Wohnort"
+
+msgid "Sign in"
+msgstr "Anmelden"
+
+msgid "Something wrong? Change it in your profile."
+msgstr "Stimmt etwas nicht? Ändere es in deinem Profil."
+
+msgid "To apply you need an account on this website – you need one for the LAN anyway. Your details from the account are filled in automatically."
+msgstr "Für den Antrag brauchst du ein Konto auf dieser Website – das brauchst du für die LAN sowieso. Deine Angaben aus dem Konto werden automatisch übernommen."
+
+msgid "What makes you want to join?"
+msgstr "Was motiviert dich, uns beizutreten?"
+
+msgid "Your application from %s is in. The board will get back to you."
+msgstr "Dein Antrag vom %s ist eingegangen. Der Vorstand meldet sich bei dir."
+
+msgid "Button label"
+msgstr "Beschriftung des Buttons"
+
+msgid "Express form the applications are stored in"
+msgstr "Express-Formular, in dem die Anträge gespeichert werden"
+
+msgid "Fields are matched by handle: nickname, vorname, name_2, e_mail, discord_username, handynr, wohnort, woher_kennst_du_uns, was_motiviert_dich_uns_beizutreten, bemerkungen_sonstiges."
+msgstr "Die Felder werden über ihr Handle zugeordnet: nickname, vorname, name_2, e_mail, discord_username, handynr, wohnort, woher_kennst_du_uns, was_motiviert_dich_uns_beizutreten, bemerkungen_sonstiges."
+
+msgid "Invalid request, please try again."
+msgstr "Ungültige Anfrage, bitte versuche es nochmals."
+
+msgid "Members of these groups see \"You are already in\" instead of the form"
+msgstr "Mitglieder dieser Gruppen sehen „Du bist schon dabei“ statt des Formulars"
+
+msgid "Membership Application"
+msgstr "Mitgliedschaftsantrag"
+
+msgid "Membership application: %s"
+msgstr "Mitgliedschaftsantrag: %s"
+
+msgid "Notify these e-mail addresses (comma separated)"
+msgstr "Diese E-Mail-Adressen benachrichtigen (durch Kommas getrennt)"
+
+msgid "Please sign in first."
+msgstr "Bitte melde dich zuerst an."
+
+msgid "Please tell us how you know us."
+msgstr "Bitte sag uns, woher du uns kennst."
+
+msgid "Please tell us what makes you want to join."
+msgstr "Bitte sag uns, was dich motiviert beizutreten."
+
+msgid "Send application"
+msgstr "Antrag senden"
+
+msgid "Signed-in users apply for membership; their account details are filled in."
+msgstr "Angemeldete Benutzer beantragen die Mitgliedschaft; ihre Kontodaten werden übernommen."
+
+msgid "Thanks, %s! Your application is in. The board will get back to you."
+msgstr "Danke, %s! Dein Antrag ist eingegangen. Der Vorstand meldet sich bei dir."
+
+msgid "The application form is not set up. Please contact the board."
+msgstr "Das Antragsformular ist nicht eingerichtet. Bitte wende dich an den Vorstand."
+
+msgid "You are already in – welcome to the club, %s!"
+msgstr "Du bist schon dabei – willkommen im Club, %s!"
+
+msgid "You have already applied."
+msgstr "Du hast bereits einen Antrag gestellt."
+
