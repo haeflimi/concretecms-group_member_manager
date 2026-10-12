@@ -96,7 +96,7 @@ class MemberDirectory
     }
 
     /**
-     * Past events each user was registered for (event manager); empty without it.
+     * Past events each user was registered for (event manager, archived ones included); empty without it.
      *
      * @param int[] $userIDs
      *
@@ -110,8 +110,8 @@ class MemberDirectory
         try {
             $rows = $this->db->fetchAllAssociative(
                 'SELECT p.uID AS uID, COUNT(*) AS n FROM cemParticipants p INNER JOIN cemEvents e ON e.id = p.eventID'
-                . ' WHERE p.uID IN (' . implode(',', array_map('intval', $userIDs)) . ') AND p.status = ? AND e.status = ? AND COALESCE(e.endsAt, e.startsAt) < NOW() GROUP BY p.uID',
-                ['registered', 'published']
+                . ' WHERE p.uID IN (' . implode(',', array_map('intval', $userIDs)) . ') AND p.status = ? AND e.status IN (?, ?) AND COALESCE(e.endsAt, e.startsAt) < NOW() GROUP BY p.uID',
+                ['registered', 'published', 'archived']
             );
         } catch (\Throwable $e) {
             return [];
