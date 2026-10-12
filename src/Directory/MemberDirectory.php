@@ -88,7 +88,7 @@ class MemberDirectory
             $filterGroup = Group::getByID((int) $gID);
             $count = count(array_filter($people, static function ($p) use ($gID) { return in_array('g' . $gID, $p['tags'], true); }));
             if ($filterGroup && $count > 0) {
-                $filters[] = ['value' => 'g' . (int) $gID, 'label' => $filterGroup->getGroupDisplayName(false), 'count' => $count];
+                $filters[] = ['value' => 'g' . (int) $gID, 'label' => $filterGroup->getGroupDisplayName(false, false), 'count' => $count];
             }
         }
 
