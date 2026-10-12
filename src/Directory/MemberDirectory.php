@@ -73,6 +73,9 @@ class MemberDirectory
                 'role' => $role,
                 'since' => $entered ? (int) date('Y', $entered) : null,
                 'online' => (int) $row['uLastOnline'] >= $online,
+                // for sorting (last login, membership): the views decide what of it reaches the page
+                'lastOnline' => (int) $row['uLastOnline'],
+                'entered' => $entered,
                 'avatar' => $ui->hasAvatar() ? (string) $ui->getUserAvatar()->getPath() : null,
                 'events' => $attended[(int) $row['uID']] ?? 0,
                 'tags' => $tags,
