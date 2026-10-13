@@ -39,9 +39,15 @@ class MemberDirectory
      */
     public function forGroup(Group $group, array $filterGroupIDs = [], int $newDays = 60, bool $withStats = true, int $limit = 0): array
     {
+        // people of the filter groups are listed too (e.g. applicants who are not in the members group yet), so every
+        // chosen filter has someone behind it; "entered" is the date they joined the main group, if they did
+        $gID = (int) $group->getGroupID();
+        $groupIDs = array_unique(array_merge([$gID], array_map('intval', $filterGroupIDs)));
         $rows = $this->db->fetchAllAssociative(
-            'SELECT u.uID, u.uName, u.uLastOnline, ug.ugEntered FROM UserGroups ug INNER JOIN Users u ON u.uID = ug.uID WHERE ug.gID = ? AND u.uIsActive = 1 ORDER BY ug.ugEntered ASC, u.uName ASC LIMIT ' . self::MAX_PEOPLE,
-            [$group->getGroupID()]
+            'SELECT u.uID, u.uName, u.uLastOnline, COALESCE(MIN(CASE WHEN ug.gID = ? THEN ug.ugEntered END), MIN(ug.ugEntered)) AS ugEntered'
+            . ' FROM UserGroups ug INNER JOIN Users u ON u.uID = ug.uID WHERE ug.gID IN (' . implode(',', $groupIDs) . ') AND u.uIsActive = 1'
+            . ' GROUP BY u.uID, u.uName, u.uLastOnline ORDER BY ugEntered ASC, u.uName ASC LIMIT ' . self::MAX_PEOPLE,
+            [$gID]
         );
         $total = count($rows);
         if ($limit > 0) {
