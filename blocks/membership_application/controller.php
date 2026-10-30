@@ -213,7 +213,7 @@ class Controller extends BlockController
             'first_name' => $ui ? $text($ui->getAttribute('billing_first_name')) : '',
             'last_name' => $ui ? $text($ui->getAttribute('billing_last_name')) : '',
             'email' => $ui ? (string) $ui->getUserEmail() : '',
-            'phone' => $ui ? $text($ui->getAttribute('user_phone')) : '',
+            'phone' => $ui ? $text($ui->getAttribute('billing_phone')) : '',
             'place' => is_object($address) && method_exists($address, 'getCity') ? trim((string) $address->getCity()) : '',
             'discord' => $discord,
         ];
