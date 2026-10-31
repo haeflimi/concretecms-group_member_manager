@@ -21,7 +21,7 @@
     var groupNames = {};
 
     Array.prototype.forEach.call(picker.options, function (o) {
-        groupNames[o.value] = o.textContent.replace(/\s*\(\d+\)$/, '');
+        groupNames[o.value] = o.textContent.replace(/\s*\(\d+\)$/, '').replace(/^\//, '');
     });
 
     function el(tag, cls, text) {
@@ -201,7 +201,8 @@
                 if (col.canAssign) {
                     ev.preventDefault();
                     card.classList.add('gma-over');
-                    ev.dataTransfer.dropEffect = (ev.ctrlKey || ev.altKey) ? 'copy' : 'move';
+                    // users from the search can only be added (effectAllowed "copy"): a "move" there would forbid the drop
+                    ev.dataTransfer.dropEffect = (ev.ctrlKey || ev.altKey || ev.dataTransfer.effectAllowed === 'copy') ? 'copy' : 'move';
                 }
             });
             card.addEventListener('dragleave', function (ev) {
@@ -233,6 +234,37 @@
         }).catch(fail);
     }
 
+    // a found user, looking like a member row of the board (grip instead of the checkbox), dragged to add
+    function foundRow(u) {
+        var row = el('div', 'gma-member gma-found');
+        row.draggable = true;
+        var grip = el('i', 'fas fa-grip-vertical gma-grip');
+        grip.setAttribute('aria-hidden', 'true');
+        row.appendChild(grip);
+        var label = el('div', 'gma-name');
+        var a = el('a', '', u.name);
+        a.href = CCM_APPLICATION_URL + '/index.php/dashboard/users/search/view/' + u.id;
+        a.draggable = false;
+        label.appendChild(a);
+        label.appendChild(document.createElement('br'));
+        label.appendChild(el('span', 'gma-email', u.email));
+        row.appendChild(label);
+        if (u['in'].length) {
+            var names = u['in'].map(function (id) { return groupNames[id] || id; }).join(', ');
+            var badge = el('span', 'badge text-bg-secondary fw-normal gma-in', '✓ ' + names);
+            badge.title = t.inGroups.replace('%s', names);
+            row.appendChild(badge);
+        }
+        row.addEventListener('dragstart', function (ev) {
+            ev.dataTransfer.effectAllowed = 'copy';
+            ev.dataTransfer.setData('text/plain', JSON.stringify({uIDs: [u.id], from: 0}));
+            row.classList.add('gma-dragging');
+        });
+        row.addEventListener('dragend', function () { row.classList.remove('gma-dragging'); });
+
+        return row;
+    }
+
     var searchTimer;
     function searchNow() {
         var q = searchInput.value.trim();
@@ -240,20 +272,8 @@
         if (q === '') { return; }
         request('GET', 'search', {q: q, groups: columns.map(function (c) { return c.id; }).join(',')}).then(function (data) {
             results.textContent = '';
-            if (!data.users.length) { results.appendChild(el('span', 'text-muted', t.noResults)); }
-            data.users.forEach(function (u) {
-                var chip = el('span', 'badge text-bg-light border gma-chip fw-normal p-2', u.name + ' · ' + u.email);
-                chip.draggable = true;
-                if (u['in'].length) {
-                    chip.title = t.inGroups.replace('%s', u['in'].map(function (id) { return groupNames[id] || id; }).join(', '));
-                    chip.appendChild(el('span', 'ms-1', '✓'));
-                }
-                chip.addEventListener('dragstart', function (ev) {
-                    ev.dataTransfer.effectAllowed = 'copy';
-                    ev.dataTransfer.setData('text/plain', JSON.stringify({uIDs: [u.id], from: 0}));
-                });
-                results.appendChild(chip);
-            });
+            if (!data.users.length) { results.appendChild(el('p', 'text-muted p-3 mb-0', t.noResults)); }
+            data.users.forEach(function (u) { results.appendChild(foundRow(u)); });
         }).catch(fail);
     }
 

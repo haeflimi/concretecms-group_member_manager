@@ -30,7 +30,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
         <div class="card-header fw-bold"><?= t('Find users') ?></div>
         <div class="card-body">
             <input type="search" id="gma-search" class="form-control mb-2" style="max-width: 24rem" placeholder="<?= t('Search by name or email, then drag a user onto a group') ?>" aria-label="<?= t('Search users') ?>">
-            <div id="gma-results" class="d-flex flex-wrap gap-2"></div>
+            <div id="gma-results" class="gma-results"></div>
         </div>
     </div>
 

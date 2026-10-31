@@ -6,7 +6,11 @@
 #gma .gma-member.gma-dragging { opacity: .4; }
 #gma .gma-member .gma-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 #gma .gma-email { color: var(--bs-secondary-color, #6c757d); font-size: .8em; }
-#gma .gma-chip { cursor: grab; }
+#gma .gma-results { display: grid; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); max-width: 60rem; border: 1px solid var(--bs-border-color, #dee2e6); border-radius: var(--bs-border-radius, .375rem); }
+#gma .gma-results:empty { display: none; }
+#gma .gma-found:last-child { border-bottom: 1px solid var(--bs-border-color, #dee2e6); }
+#gma .gma-grip { color: var(--bs-secondary-color, #6c757d); }
+#gma .gma-in { max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 #gma .gma-readonly .gma-member { cursor: default; }
 #gma .gma-bulk { display: none; }
 #gma .gma-col.gma-has-selection .gma-bulk { display: flex; }

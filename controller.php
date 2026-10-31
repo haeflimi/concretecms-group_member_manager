@@ -24,7 +24,7 @@ class Controller extends Package
 {
     protected $pkgHandle = 'group_member_manager';
     protected $appVersionRequired = '9.0.0';
-    protected $pkgVersion = '1.4.1';
+    protected $pkgVersion = '1.4.2';
     protected $pkgAutoloaderRegistries = [
         'src' => 'GroupMemberManager',
     ];
